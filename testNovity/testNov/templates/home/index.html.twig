@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Meteo Marseille{% endblock %}
+
+{% block body %}
+<div class="container">
+		<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" style="background-color: #de860a !important;">
+			<div class="container-fluid">
+             <img src="./assets/img/meteo.png">
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+				</div>
+			</div>
+		</nav>
+		<main>
+			<div class="py-5 text-center mt-5">
+				<h1>Prévision générale pour Marseille</h1>
+				<p class="lead"></p>
+                </div>
+
+			<div class="row g-3">
+				<div class="col-md-5 col-lg-4 order-md-last">
+					
+
+				</div>
+				<div class="col-md-12 col-lg-12">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-12 col-xl-10">
+
+        <div class="card shadow-0 border border-dark border-5 text-dark" style="border-radius: 10px;">
+          <div class="card-body p-4">
+
+            <div class="row text-center">
+              <div class="col-md-9 text-center border-end border-5 border-dark py-4"
+                style="margin-top: -1.5rem; margin-bottom: -1.5rem;">
+                <div class="d-flex justify-content-around mt-3">
+                  <p class="small">Marseille</p>
+                  <p class="small"></p>
+                  <p class="small">{{ "now"|date("d/m/Y") }}</p>
+                </div>
+                <div class="d-flex justify-content-around align-items-center py-5 my-4">
+                  <p class="fw-bold mb-0" style="font-size: 7rem;">{{ data.main.temp }} °C</p>
+                  <div class="text-start">
+                    <p class="small"></p>
+                    <p class="h3 mb-3">Sunday</p>
+                    <p class="small mb-0">{{ data.weather.0.description }}</p>
+                  </div>
+                </div>
+            
+              </div>
+              <div class="col-md-3 text-end">
+                <p class="small mt-3 mb-5 pb-5">Historique</p>
+				{% for historique in historiques %}
+                <p class="pb-1"><span class="pe-2"></span> {{ historique.date|date("m/d/Y H:m:s") }}<strong> {{ historique.temperature }} °C</strong></p>
+				{% endfor %}
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+				</div>
+			</div>
+            
+            <div class="py-5 text-center mt-5">
+				<h1>Actualités</h1>
+                </div>
+
+	<div class="row">
+	<div class="col-md-12 col-lg-4">
+	<h2 class="lead"> Le trou dans la couche d'ozone sera rebouché d'ici 40 ans selon l'ONU ! </h2>
+	<p>
+	Enfin une bonne nouvelle pour notre belle planète bleue ! Si nous continuons nos efforts pour limiter le dérèglement climatique, le trou de la couche d'ozone pourrait se résorber d'ici les dix prochaines décennies.
+	</p>
+	</div>
+        <div class="col-md- col-lg-8 test text-center">
+  <div><img src="./assets/img/1.jpg"></div>
+  <div><img src="./assets/img/2.jpg"></div>
+  <div><img src="./assets/img/3.jpg"></div>
+</div>
+</div>
+
+	<div class="row mt-5">
+	<div class="col-md-12 col-lg-4">
+	<h2 class="lead">  Froid, neige : à quoi faut-il s'attendre la semaine prochaine ? </h2>
+	<p>
+	Les conditions météo vont évoluer vers le retour de l'hiver sur une grande partie de la France. De la neige seule pourrait s'observer jusqu'en plaine. En montagne, l'enneigement s'annonce conséquent.</p>
+	</div>
+        <div class="col-md- col-lg-8 test text-center">
+  <div><img src="./assets/img/4.jpg"></div>
+  <div><img src="./assets/img/5.png"></div>
+  <div><img src="./assets/img/6.jpg"></div>
+</div>
+</div>
+
+		</main>
+
+		<footer class="my-5 pt-5 text-muted text-center text-small" style="background-color: #de860a !important; color: white !important;">
+			<p class="mb-1">© 2023 Henintsoa for Novity</p>
+		</footer>
+
+	</div>
+
+</div>
+{% endblock %}

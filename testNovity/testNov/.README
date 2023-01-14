@@ -1,0 +1,14 @@
+Ce projet est fait à partir de php 8 avec symfony 5. 
+
+Pour lancer ce projet, voici les etapes à suivre : 
+
+1- Cloner le code dans votre environnement local
+2- Ouvrir le projet dans un editeur de texte
+3- Ouvrir un terminal et rendez vous dans le dossier du projet
+4- lancer "composer install"
+5- Lancer "npm install"
+6- Configurer votre base de données dans le fichier ".env" en mettant l'identifiant de votre base local et le nom de votre base de données
+7- Lancer "php bin/console make:migration"
+8- Lancer "php bin/console  doctrine:migrations:migrate"
+9- Lancer le projet avec " php -S 127.0.0.1:8002 -t public "
+10- Rendez vous sur votre navigateur en lancant le lien " localhost:8002 "
